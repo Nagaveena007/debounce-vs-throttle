@@ -1,6 +1,5 @@
-import React, { useState, useCallback, useRef, useEffect } from "react";
-import debounce from "lodash.debounce";
-
+import React, { useState, useCallback} from "react";
+import {debounce} from "lodash-es";
 import "./App.css";
 
 function useDebounce(callback, delay) {
@@ -13,9 +12,9 @@ function useDebounce(callback, delay) {
 
 function App() {
   const [value, setValue] = useState("");
-  const [dbValue, saveToDb] = useState(""); 
+  const [dbValue, setDbValue] = useState(""); 
 
-  const debouncedSave = useDebounce((nextValue) => saveToDb(nextValue), 1000);
+  const debouncedSave = useDebounce((nextValue) => setDbValue(nextValue), 1000);
 
   const handleChange = (event) => {
     const { value: nextValue } = event.target;
