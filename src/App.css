@@ -1,0 +1,11 @@
+body {
+  margin: 48px auto;
+  max-width: 1200px;
+  padding: 0px 24px;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 48px;
+}
